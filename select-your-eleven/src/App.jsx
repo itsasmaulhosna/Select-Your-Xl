@@ -2,7 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import './App.css'
 import Banner from './Components/Navbar/Banner/Banner'
 import Navbar from './Components/Navbar/Navbar'
@@ -13,13 +13,13 @@ const fetchPlayers=async()=>{
 }
 function App() {
 const playersPromise=fetchPlayers()
-
+const [coin,setCoin]=useState(5000000)
   return (
     <>
-     <Navbar></Navbar>
+     <Navbar coin={coin}></Navbar>
      <Banner></Banner>
 <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>
-}>     <Players playersPromise={playersPromise}></Players></Suspense>
+}>     <Players playersPromise={playersPromise} setCoin={setCoin} coin={coin}></Players></Suspense>
     </>
   )
 }
