@@ -3,7 +3,7 @@
 // import { FaFlag } from "react-icons/fa";
  import Card from "../ui/Card";
 
-const AvailablePlayers = ({players,setCoin,coin}) => {
+const AvailablePlayers = ({players,setCoin,coin,selectedPlayers,setSelectedPlayers}) => {
     console.log(players)
    
     return (
@@ -13,7 +13,7 @@ const AvailablePlayers = ({players,setCoin,coin}) => {
                 console.log(player)
                 return(
                     <div className='container mx-auto'>
-                        <Card player={player} setCoin={setCoin} coin={coin}></Card>
+                        <Card player={player} setCoin={setCoin} coin={coin} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers}></Card>
             {/* <div className="card bg-base-100  shadow-sm">
   <figure>
     <img
